@@ -6,6 +6,8 @@ EMBED_VIDEO_BACKENDS = getattr(settings, 'EMBED_VIDEO_BACKENDS', (
     'embed_video.backends.VimeoBackend',
     'embed_video.backends.WistiaBackend',
     'embed_video.backends.SoundCloudBackend',
+    'embed_video.backends.Html5VideoBackend',
+    'embed_video.backends.Html5AudioBackend',
 ))
 """ :type: tuple[str] """
 

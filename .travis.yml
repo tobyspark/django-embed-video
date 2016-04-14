@@ -1,27 +1,20 @@
-sudo: false
 language: python
-python:
-    - "2.7"
-    - "3.4"
-cache: pip
+cache:
+  directories:
+  - $HOME/.cache/pip
 env:
-    - DJANGO_VERSION=1.5.2
-    - DJANGO_VERSION=1.6.5
-    - DJANGO_VERSION=1.7.0
-    - DJANGO_VERSION=1.8.0
-    - DJANGO_VERSION=1.8.6
-    - DJANGO_VERSION=1.9.4
-install:
-    - pip install -q Django==$DJANGO_VERSION
-    - pip install coveralls
-    - pip install mock
-    - pip install south
-    - pip install nose
-    - pip install testfixtures
-script:
-    - python setup.py build
-    - PYTHONHASHSEED=0 python setup.py nosetests --verbosity 2 --with-coverage --cover-tests --cover-erase
-after_success:
-    - coveralls
-notifications:
-  email: false
+  - TOXENV=py27-django15
+  - TOXENV=py27-django16
+  - TOXENV=py27-django17
+  - TOXENV=py27-django18
+  - TOXENV=py27-django19
+  - TOXENV=py27-django110
+  - TOXENV=py34-django15
+  - TOXENV=py34-django16
+  - TOXENV=py34-django17
+  - TOXENV=py34-django18
+  - TOXENV=py34-django19
+  - TOXENV=py34-django110
+install: pip install tox coveralls
+script: tox
+after_success: coveralls

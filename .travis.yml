@@ -23,3 +23,5 @@ script:
     - PYTHONHASHSEED=0 python setup.py nosetests --verbosity 2 --with-coverage --cover-tests --cover-erase
 after_success:
     - coveralls
+notifications:
+  email: false

@@ -1,7 +1,7 @@
 django-embed-video
 ==================
 
-Django app for easy embedding YouTube and Vimeo videos and music from SoundCloud.
+Django app for easy embedding YouTube, Vimeo, Wistia videos and music from SoundCloud.
 
 .. image:: https://jazzband.co/static/img/badge.svg
    :target: https://jazzband.co/

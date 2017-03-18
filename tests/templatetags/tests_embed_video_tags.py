@@ -1,12 +1,12 @@
-from unittest import TestCase, skip
-from mock import Mock, patch
 import re
+from unittest import TestCase, skip
 
-from django.template import TemplateSyntaxError
 from django.http import HttpRequest
+from django.template import TemplateSyntaxError
 from django.template.base import Template
 from django.template.context import RequestContext
 from django.test.client import RequestFactory
+from mock import Mock, patch
 from testfixtures import log_capture
 
 from embed_video.templatetags.embed_video_tags import VideoNode
@@ -281,4 +281,3 @@ class EmbedVideoNodeTestCase(TestCase):
         context = {'request': InsecureRequest()}
         backend = VideoNode.get_backend('http://www.youtube.com/watch?v=jsrRJyHBvzw', context)
         self.assertFalse(backend.is_secure)
-

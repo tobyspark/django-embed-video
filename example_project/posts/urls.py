@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import PostListView, PostDetailView
+from .views import PostDetailView, PostListView
 
 urlpatterns = [
     url(r'(?P<pk>\d+)/$', PostDetailView.as_view(), name='detail'),

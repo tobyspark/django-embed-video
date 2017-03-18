@@ -1,9 +1,11 @@
-import requests
-from mock import patch
 from unittest import TestCase
 
+import requests
+from mock import patch
+
+from embed_video.backends import VideoDoesntExistException, WistiaBackend
+
 from . import BackendTestMixin
-from embed_video.backends import WistiaBackend, VideoDoesntExistException
 
 
 class WistiaBackendTestCase(BackendTestMixin, TestCase):

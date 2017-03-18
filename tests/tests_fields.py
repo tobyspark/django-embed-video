@@ -1,12 +1,13 @@
-from mock import patch
 from unittest import TestCase
 
-from django.forms import ValidationError
 from django import VERSION
+from django.forms import ValidationError
+from mock import patch
 
-from ..fields import EmbedVideoField, EmbedVideoFormField
-from ..backends import UnknownBackendException, UnknownIdException, \
-    YoutubeBackend
+from embed_video.backends import (
+    UnknownBackendException, UnknownIdException, YoutubeBackend,
+)
+from embed_video.fields import EmbedVideoField, EmbedVideoFormField
 
 
 class EmbedVideoFieldTestCase(TestCase):

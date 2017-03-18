@@ -20,7 +20,7 @@ import sys, os
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'embed_video.tests.django_settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.settings'
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 

@@ -1,21 +1,25 @@
+import json
 import re
 import sys
-import json
+
 import requests
+from django.http import QueryDict
+from django.template.loader import render_to_string
+from django.utils.functional import cached_property
+from django.utils.safestring import mark_safe
+
+from .settings import (
+    EMBED_VIDEO_BACKENDS, EMBED_VIDEO_TIMEOUT,
+    EMBED_VIDEO_YOUTUBE_DEFAULT_QUERY,
+)
+from .utils import import_by_path
 
 if sys.version_info.major == 3:
     import urllib.parse as urlparse
 else:
     import urlparse
 
-from django.http import QueryDict
-from django.template.loader import render_to_string
-from django.utils.functional import cached_property
-from django.utils.safestring import mark_safe
 
-from .utils import import_by_path
-from .settings import EMBED_VIDEO_BACKENDS, EMBED_VIDEO_TIMEOUT, \
-    EMBED_VIDEO_YOUTUBE_DEFAULT_QUERY
 
 
 class EmbedVideoException(Exception):

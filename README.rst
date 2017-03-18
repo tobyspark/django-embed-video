@@ -7,9 +7,12 @@ Django app for easy embedding YouTube, Vimeo, Wistia videos and music from Sound
    :target: https://jazzband.co/
    :alt: Jazzband
 .. image:: https://travis-ci.org/jazzband/django-embed-video.png?branch=master
-    :target: https://travis-ci.org/jazzband/django-embed-video
-.. image:: https://coveralls.io/repos/yetty/django-embed-video/badge.png?branch=master
-    :target: https://coveralls.io/r/yetty/django-embed-video?branch=master
+   :target: https://travis-ci.org/jazzband/django-embed-video
+   :alt: Build Status
+
+.. image:: https://codecov.io/gh/jazzband/django-embed-video/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/jazzband/django-embed-video/branch/master
+   :alt: Test coverage status
 
 Documentation
 *************

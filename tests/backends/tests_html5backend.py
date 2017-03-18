@@ -1,7 +1,8 @@
 from unittest import TestCase
 
-from . import BackendTestMixin
 from embed_video import backends
+
+from . import BackendTestMixin
 
 
 class HTML5BackendTestCase(TestCase):

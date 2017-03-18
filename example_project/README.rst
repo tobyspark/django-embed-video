@@ -1,10 +1,9 @@
 Running example project
 ***********************
 
-#. Install Django and PyYAML::
+#. Install Django::
 
      pip install Django
-     pip install pyyaml
 
 #. Create database::
 

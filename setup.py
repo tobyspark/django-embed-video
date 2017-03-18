@@ -1,36 +1,45 @@
-from setuptools import setup, find_packages
+from io import open
 
-import os
+from setuptools import setup, find_packages
 
 embed_video = __import__('embed_video')
 
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-README = read('README.rst')
-CHANGES = read('CHANGES.rst')
-
-
 setup(
     name='django-embed-video',
-    packages=find_packages(),
-    package_data={'embed_video': ['templates/embed_video/*.html']},
     version=embed_video.get_version(),
-    author='Juda Kaleta',
-    author_email='juda.kaleta@gmail.com',
-    url='https://github.com/jazzband/django-embed-video',
     description=embed_video.__doc__.strip(),
-    long_description='\n\n'.join([README, CHANGES]),
-    classifiers=[
-        'Framework :: Django',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 2.7',
-        'Topic :: Internet :: WWW/HTTP',
+    long_description=open('README.rst', encoding='utf-8').read() + '\n\n' +
+                     open('CHANGES.rst', encoding='utf-8').read(),
+    author='Cédric Carrard',
+    author_email='cedriccarrard@gmail.com',
+    url='https://github.com/jazzband/django-embed-video',
+    download_url='https://pypi.python.org/pypi/django-embed-video',
+    license='MIT',
+    packages=find_packages(exclude=('tests.*', 'tests', 'example_project')),
+    install_requires=[
+        'Django>=1.8',
+        'requests >= 1.2.3',
     ],
-    keywords=['youtube', 'vimeo', 'video', 'soundcloud'],
-    install_requires=['requests >= 1.2.3', 'Django >= 1.5'],
-    test_suite='nose.collector',
+    include_package_data=True,
+    zip_safe=False,
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
+        'Framework :: Django :: 1.10',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
+    keywords=['video', 'youtube', 'vimeo', 'soundcloud']
 )

@@ -9,9 +9,9 @@ STATIC_ROOT = MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 STATIC_URL = MEDIA_URL = '/static/'
 
 INSTALLED_APPS = (
-    'django.contrib.contenttypes',
     'django.contrib.auth',
-    'embed_video',
+    'django.contrib.contenttypes',
+    'embed_video'
 )
 
 

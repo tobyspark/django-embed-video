@@ -1,5 +1,4 @@
 requests
-nose
 mock
 south
 testfixtures

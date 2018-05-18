@@ -163,8 +163,9 @@ class VideoNode(Node):
         backend = backend_or_url if isinstance(backend_or_url, VideoBackend) \
             else detect_backend(str(backend_or_url))
 
-        if context and 'request' in context:
-            backend.is_secure = context['request'].is_secure()
+        # TOBY: Removed this as request.is_secure will return false when reverse proxied, even if the proxy is serving https externally
+        # if context and 'request' in context:
+        #     backend.is_secure = context['request'].is_secure()
         if options:
             backend.set_options(options)
 
